@@ -49,7 +49,7 @@ class MemberServiceTest {
         memberService.join(member1);
 
         // JUnit5에서 예측하는 예외를 반환할 경우 test 성공
-        assertThrows(NotEoughStockException.class, () -> {
+        assertThrows(IllegalStateException.class, () -> {
             memberService.join(member2); // 예외가 발생해야 한다
         });
 
