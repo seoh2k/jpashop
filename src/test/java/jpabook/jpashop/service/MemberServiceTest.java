@@ -3,6 +3,7 @@ package jpabook.jpashop.service;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.exception.NotEoughStockException;
 import jpabook.jpashop.repository.MemberRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -48,7 +49,7 @@ class MemberServiceTest {
         memberService.join(member1);
 
         // JUnit5에서 예측하는 예외를 반환할 경우 test 성공
-        assertThrows(IllegalStateException.class, () -> {
+        assertThrows(NotEoughStockException.class, () -> {
             memberService.join(member2); // 예외가 발생해야 한다
         });
 

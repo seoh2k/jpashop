@@ -1,5 +1,6 @@
 package jpabook.jpashop.service;
 
+import jpabook.jpashop.exception.NotEoughStockException;
 import jpabook.jpashop.repository.MemberRepository;
 import jpabook.jpashop.domain.Member;
 import lombok.RequiredArgsConstructor;
@@ -30,7 +31,7 @@ public class MemberService {
     private void validationDuplicateMember(Member member) {
         List<Member> findMembers = memberRepository.findByName(member.getName());
         if(!findMembers.isEmpty()){
-            throw new IllegalStateException("이미 존재하는 회원입니다.");
+            throw new NotEoughStockException("이미 존재하는 회원입니다.");
         }
     }
 
