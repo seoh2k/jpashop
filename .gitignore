@@ -6,3 +6,12 @@ build/
 
 # target 디렉토리 (Maven)
 target/
+
+/.gradle/  # Gradle 캐시 디렉토리 (무조건 제외해야 함)
+!gradle/wrapper/  # gradle-wrapper는 포함시켜야 함
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Gradle wrapper scripts (필요 시 포함)
+!gradlew
+!gradlew.bat
