@@ -1,0 +1,8 @@
+# Java class files
+*.class
+
+# build 디렉토리 (Gradle)
+build/
+
+# target 디렉토리 (Maven)
+target/
